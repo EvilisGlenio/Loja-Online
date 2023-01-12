@@ -26,6 +26,17 @@ public class Main {
 			qtdProdutos = JOptionPane.showConfirmDialog(null, "Ainda que adcionar produtos?");
 			i++;
 		} while (qtdProdutos == 0);
+		
+		int removeItem = JOptionPane.showConfirmDialog(null, "Gostaria de deletar algum dos itens?");
+		
+		if (removeItem == 0) {
+			
+			int item = Integer.valueOf(JOptionPane.showInputDialog("Qual item desejas remover?"));
+			double produtoRemovido = venda.getProdutos().get(item-1).getValor();
+			venda.getProdutos().remove(item -1);
+			somaProdutos -= produtoRemovido;
+			
+		}
 
 		venda.setDescricao("Venda para Rubens");
 		venda.setValorDesconto(10.00);
