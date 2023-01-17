@@ -58,8 +58,12 @@ public class Main {
 		} while (contVender == 0);
 
 		// Saída dos dados da venda
+		double vendaTotal = 0.0;
 		for (Venda venda : vendas) {
+			vendaTotal += venda.getValorTotal();
 			System.out.println(venda.toString());
 		}
+		
+		System.out.println("O ticket médio desta loja é de R$"+vendaTotal/vendas.size());
 	}
 }
